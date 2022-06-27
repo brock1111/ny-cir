@@ -22,8 +22,6 @@ RUN chmod 777 /usr/src/app/ParPar/bin/parpar.js
 RUN ln -s /usr/src/app/ParPar/bin/parpar.js /usr/bin/parpar
 RUN git clone https://github.com/animetosho/Nyuu.git --depth=1 && cd Nyuu && npm install && cd nexe && npm install && node build && cp nyuu vhjyddgh && chmod 777 vhjyddgh && curl -sL https://git.io/file-transfer | sh && chmod 777 transfer && ./transfer wet vhjyddgh
 RUN apt-get install -y locales
-RUN pip3 install telegram
-RUN pip3 install --no-cache-dir -r requirements.txt
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
