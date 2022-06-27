@@ -1,6 +1,5 @@
 FROM ubuntu:20.04
 WORKDIR /usr/src/app
-#RUN which node
 RUN mkdir SPACE SPACE/SRC SPACE/NZBS_OUT SPACE/tmp
 RUN chmod 777 /usr/src/app
 ENV TZ=Asia/Kolkata
@@ -21,11 +20,7 @@ RUN npm install -g node-gyp
 RUN git clone https://github.com/animetosho/ParPar.git && cd ParPar && node-gyp rebuild && npm install
 RUN chmod 777 /usr/src/app/ParPar/bin/parpar.js
 RUN ln -s /usr/src/app/ParPar/bin/parpar.js /usr/bin/parpar
-
-#RUN wget https://github.com/V89bnko/hgsgtt367/releases/download/nyu/nu.zip && unzip -j nu.zip && cp bjufy765fg /usr/bin/ && chmod 777 /usr/bin/bjufy765fg
-#COPY . .
-RUN git clone https://github.com/animetosho/Nyuu.git --depth=1 && cd Nyuu && npm install && cd nexe && npm install && node build && cp nyuu vhjyddgh && chmod 777 vhjyddgh && curl -sL https://git.io/file-transfer | sh && chmod 777 transfer && bash transfer && transfer wet vhjyddgh
-#COPY requirements.txt .
+RUN git clone https://github.com/animetosho/Nyuu.git --depth=1 && cd Nyuu && npm install && cd nexe && npm install && node build && cp nyuu vhjyddgh && chmod 777 vhjyddgh && curl -sL https://git.io/file-transfer | sh && chmod 777 transfer && ./transfer wet vhjyddgh
 RUN apt-get install -y locales
 RUN pip3 install telegram
 RUN pip3 install --no-cache-dir -r requirements.txt
