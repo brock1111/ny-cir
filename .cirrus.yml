@@ -10,7 +10,7 @@ docker_builder:
   env:
     DOCKER_USERNAME: ENCRYPTED[3f45147734f443aa49633ef55f8cbdfbcf30cffbb82703a60af2fbb1233f2608b3fcc6b75b4f3e87c75aeccc69577fb3]
     DOCKER_PASSWORD: ENCRYPTED[07b0117fe6902656efc2c9062634cd2672aa125f3e2b800369310994880b38d4bde55774a646078d4c5a56f3bc11dc45]
-    dom: ENCRYPTED[24621cd2a80b16911b7bc890aaeddb85653581d15aac35681360c3bbbd67e1af084a3e88e1787d61b3be4bcf6f7c80e9]
+    dom: $CIRRUS_TAG
   build_script: |
     docker build --file Dockerfile --tag $DOCKER_USERNAME/$dom .
   login_script: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
