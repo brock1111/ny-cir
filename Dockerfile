@@ -1,6 +1,5 @@
 FROM greyltc/archlinux-aur
 WORKDIR /usr/src/app
-RUN mkdir SPACE SPACE/SRC SPACE/NZBS_OUT SPACE/tmp
 RUN chmod 777 /usr/src/app
 ENV TZ=Asia/Kolkata
 RUN pacman -Syyu --noconfirm
