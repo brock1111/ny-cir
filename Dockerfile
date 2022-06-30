@@ -6,7 +6,7 @@ ENV TZ=Asia/Kolkata
 RUN pacman -Syyu --noconfirm
 RUN pacman-db-upgrade
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN aur-install python-pip python3 parpar-bin wget git gcc curl nyuu-bin nodejs npm rar mediainfo cksfv unzip
+RUN aur-install nodejs node-gyp npm python-pip python3 parpar-bin wget git gcc curl nyuu-bin rar mediainfo cksfv unzip
 RUN npm install -g yarn
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
